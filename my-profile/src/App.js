@@ -8,6 +8,7 @@ function App() {
   const [pfName, setpfName] = useState("");
   const [pfNickName, setpfNickName] = useState("");
   const [pfDesignation, setpfDesignation] = useState("");
+  const [searchText, setsearchText] = useState("");
 
   const [repoContent, setrepoContent] = useState([]);
 
@@ -37,11 +38,20 @@ function App() {
  
     fetchData1();
   }, []);
+  /* Will modify the search soon*/
+  function searchValueChange(value){
+    setsearchText(value);
+    if (repoContent.length > 0){
+      setrepoContent(repoContent.filter((val)=>val.name == value))
+    }
+
+  };
 
   const items = []
   if (repoContent.length > 0){
     for (const [index, value] of repoContent.entries()) {
-      items.push(<div className="block"><h3 key={index}>{value.name}</h3></div>)
+      console.log(value);
+      items.push(<div className="block"><a href={value.html_url} key={index}>{value.name}</a></div>)
     }
   }
   
@@ -49,7 +59,7 @@ function App() {
       
       <Fragment>
 
-        
+         
           <Row className="show-grid">
             <Col md={4}>
             <div className="left-block">
@@ -69,6 +79,10 @@ function App() {
         </div>
             </Col>
             <Col md={8}>
+              <div className="searchBar">
+                <input value={searchText} type="text" onChange={(val)=>searchValueChange(val.target.value)}/>
+
+              </div>
               <div>
                 {items}
               </div>
