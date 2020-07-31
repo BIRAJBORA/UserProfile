@@ -41,7 +41,7 @@ function App() {
   const items = []
   if (repoContent.length > 0){
     for (const [index, value] of repoContent.entries()) {
-      items.push(<h1 key={index}>{value.name}</h1>)
+      items.push(<div className="block"><h3 key={index}>{value.name}</h3></div>)
     }
   }
   
