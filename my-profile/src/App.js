@@ -1,8 +1,7 @@
 import React ,{Fragment,useState,useEffect}from 'react';
 import axios from 'axios';
-
-import logo from './logo.svg';
 import './App.css';
+import { Grid, Row, Col} from 'react-bootstrap';
 
 function App() {
   const [pfImage, setpfImage] = useState("");
@@ -49,24 +48,34 @@ function App() {
   return(
       
       <Fragment>
+
         
-        <div>
-          <a>
-            <img src={pfImage} style={{width: "200px"}}></img>
-          </a>
-          <div>
-           <h1>{pfName}</h1>
-           <span>{pfNickName}</span>
-           <p>{pfNickName}</p>
-           <h3>{pfDesignation}</h3>
-          </div>
+          <Row className="show-grid">
+            <Col md={4}>
+            <div>
+            <a>
+              <img src={pfImage} style={{width: "200px"}}></img>
+            </a>
+            <div>
+            <h1>{pfName}</h1>
+            <span>{pfNickName}</span>
+            <p>{pfNickName}</p>
+            <h3>{pfDesignation}</h3>
+            </div>
 
         </div>
-         <div>
-         {items}
-        
+            </Col>
+            <Col md={8}>
+              <div>
+                {items}
+              </div>
+            </Col>
 
-         </div>
+          </Row>
+      
+        
+       
+        
        
       </Fragment>
       
