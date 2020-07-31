@@ -52,14 +52,17 @@ function App() {
         
           <Row className="show-grid">
             <Col md={4}>
-            <div>
-            <a>
-              <img src={pfImage} style={{width: "200px"}}></img>
-            </a>
-            <div>
+            <div className="left-block">
+              <div className="round-block">
+                <a>
+                <img src={pfImage} className="img-round"></img>
+                </a>
+              </div>
+           
+            <div className="text-layout">
+            
             <h1>{pfName}</h1>
             <span>{pfNickName}</span>
-            <p>{pfNickName}</p>
             <h3>{pfDesignation}</h3>
             </div>
 

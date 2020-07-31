@@ -2,3 +2,13 @@
   padding: 10px;
   border-bottom: 1px solid #a9a9a99e
 }
+.left-block{
+  padding-left: 15px;
+}
+.img-round{
+  width: 300px;
+  border-radius: 150px;
+}
+.text-layout{
+  padding-left: 15px;
+}
